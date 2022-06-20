@@ -1,0 +1,34 @@
+<h1 id="{{df['name_tag']}}">{{df['name']}}</h1>
+<style type="text/css">
+.ft  {border-collapse:collapse;border-spacing:0;width: 1000px;}
+.ft td{border-color:#f8a102;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;text-align:left;vertical-align:top;
+  overflow:hidden;padding:2px 2px;word-break:normal;}
+</style>
+<table class="ft">
+    <tbody>
+    </tbody>
+    <tr>
+        <td rowspan="5">{% include 'observation_summary.html' %}</td>
+        <td><br><br><!-- empty space --></td>
+        <td rowspan="6" style="width: 200px">{% include 'proportions.html' %}</td>
+        <td rowspan="6" style="width: 200px">{% include 'values.html' %}</td>
+    </tr>
+    <tr>
+        <td rowspan="2">{%  include 'numerical_summary.html' %}</td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+        <td rowspan="2">{% include 'outlier_summary.html' %}</td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+        <td>{% include 'exception_summary.html' %}</td>
+        <td><!-- empty space --></td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- <p style = 'padding-bottom: 13cm;'></p> -->
+<p style="page-break-before: always" ></p>    

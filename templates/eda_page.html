@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{title}}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+</style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <a class="active" href="#Introduction">Introduction</a>
+        {% for i, feature in features.iterrows() %}
+            <a href="#{{feature.iloc[[0]].to_string(index=False)}}">{{feature.iloc[[1]].to_string(index=False)}}</a>
+        {% endfor %}
+    </div>
+    <div class="content">
+        <h3 id='Introduction'>Introduction</h3>
+        {% for i, feature in features.iterrows() %}
+            {% set df = features.loc[i] %}
+            {% include "feature_template.html" %}
+        {% endfor %}
+        
+     <footer class="container-fluid text-center">
+        <p>ExtraEDA data profiling package</p>
+    </footer>
+    </div>
+</body>
+</html>
+
+
+

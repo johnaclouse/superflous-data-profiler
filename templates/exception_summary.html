@@ -1,0 +1,7 @@
+{% if df['is_unique'] %}
+<p style="color:#cb0000;font-size:14px;font-weight:bold;">All values are unique</p>
+{% endif %}
+
+{% if df['is_zero_variance'] %}
+<p style="color:#3166ff;font-size:14px;font-weight:bold;">All values = {{df['mean']}}</p>
+{% endif %}

@@ -1,0 +1,21 @@
+<!-- https://www.tablesgenerator.com/html_tables# -->
+<h3>Proportions</h3>
+<style type="text/css">
+.tg  {border:none;border-collapse:collapse;border-spacing:0;}
+.tg td{border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:2px 2px;
+  word-break:normal;}
+.tg th{border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;
+  overflow:hidden;padding:2px 2px;word-break:normal;}
+.tg .tg-lqy6{text-align:right;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<tbody>
+    {% for i in df['proportions'] %}
+        <tr>
+            <td class="tg-lqy6">{{i}}</td>
+            <td class="tg-0lax">{{df['values'][i]}}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
