@@ -3,40 +3,38 @@
 .tg  {border:none;border-collapse:collapse;border-spacing:0;}
 .tg td{border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:2px 2px;
   word-break:normal;}
-.tg th{border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;
-  overflow:hidden;padding:2px 2px;word-break:normal;}
-.tg .tg-3z1b{border-color:#000000;font-weight:bold;text-align:right;vertical-align:top}
-.tg .tg-73oq{border-color:#000000;text-align:left;vertical-align:top}
+.tg .tg-nusu1{border-color:#0000FF;font-weight:bold;text-align:right;vertical-align:top;width: 120px;}
+.tg .tg-nusu2{border-color:#00FFFF;text-align:right;vertical-align:top;}
 </style>
 <table class="tg">
 <tbody>
   <tr>
-    <td class="tg-3z1b">5th %</td>
-    <td class="tg-73oq">{{df['pct_5']}}</td>
-    <td class="tg-73oq">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td class="tg-3z1b">CV</td>
-    <td class="tg-73oq">{{df['cv']}}</td>
+    <td class="tg-nusu1">5th %</td>
+    <td class="tg-nusu2">{{df['pct_5'] | sdp.pretty_format}}</td>
+    <td style="width: 50px"></td>
+    <td class="tg-nusu1">CV</td>
+    <td class="tg-nusu2">{{df['cv']|sdp.pretty_format}}</td>
   </tr>
   <tr>
-    <td class="tg-3z1b">Mean</td>
-    <td class="tg-73oq">{{df['mean']}}</td>
-    <td class="tg-73oq"></td>
-    <td class="tg-3z1b">Std Dev</td>
-    <td class="tg-73oq">{{df['std_dev']}}</td>
+    <td class="tg-nusu1">Mean</td>
+    <td class="tg-nusu2">{{df['mean'] | sdp.pretty_format}}</td>
+    <td></td>
+    <td class="tg-nusu1">Std Dev</td>
+    <td class="tg-nusu2">{{df['std_dev'] | sdp.pretty_format}}</td>
   </tr>
   <tr>
-    <td class="tg-3z1b">Median</td>
-    <td class="tg-73oq">{{df['median']}}</td>
-    <td class="tg-73oq"></td>
-    <td class="tg-3z1b">IQR</td>
-    <td class="tg-73oq">{{df['iqr']}}</td>
+    <td class="tg-nusu1">Median</td>
+    <td class="tg-nusu2">{{df['median'] | sdp.pretty_format}}</td>
+    <td></td>
+    <td class="tg-nusu1">IQR</td>
+    <td class="tg-nusu2">{{df['iqr'] | sdp.pretty_format}}</td>
   </tr>
   <tr>
-    <td class="tg-3z1b">95th %</td>
-    <td class="tg-73oq">{{df['pct_95']}}</td>
-    <td class="tg-73oq"></td>
-    <td class="tg-3z1b">Med Abs Dev</td>
-    <td class="tg-73oq">{{df['mad']}}</td>
+    <td class="tg-nusu1">95th %</td>
+    <td class="tg-nusu2">{{df['pct_95']| sdp.pretty_format}}</td>
+    <td></td>
+    <td class="tg-nusu1">Med Abs Dev</td>
+    <td class="tg-nusu2">{{df['mad']| sdp.pretty_format}}</td>
   </tr>
 </tbody>
 </table>

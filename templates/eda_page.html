@@ -58,7 +58,7 @@ div.content {
     <div class="sidebar">
         <a class="active" href="#Introduction">Introduction</a>
         {% for i, feature in features.iterrows() %}
-            <a href="#{{feature.iloc[[0]].to_string(index=False)}}">{{feature.iloc[[1]].to_string(index=False)}}</a>
+            <a href="#{{feature.iloc[[1]].to_string(index=False)}}">{{feature.iloc[[0]].to_string(index=False)}}</a>
         {% endfor %}
     </div>
     <div class="content">
@@ -74,6 +74,3 @@ div.content {
     </div>
 </body>
 </html>
-
-
-

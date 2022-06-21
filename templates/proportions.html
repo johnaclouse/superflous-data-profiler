@@ -11,10 +11,10 @@
 </style>
 <table class="tg">
 <tbody>
-    {% for i in df['proportions'] %}
+    {% for value in df['proportions'] %}
         <tr>
-            <td class="tg-lqy6">{{i}}</td>
-            <td class="tg-0lax">{{df['values'][i]}}</td>
+            <td class="tg-lqy6">{{value}}</td>
+            <td class="tg-0lax">{{df['proportions'][value]}}</td>
         </tr>
     {% endfor %}
 </tbody>

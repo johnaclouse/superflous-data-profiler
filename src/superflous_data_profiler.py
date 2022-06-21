@@ -1,5 +1,6 @@
 import base64
 import pandas as pd
+import math
 
 def encode_image(file_name):
     data_uri = base64.b64encode(open(file_name, 'rb').read()).decode('utf-8')
@@ -10,10 +11,10 @@ def encode_image(file_name):
 def create_test_data():
     data = {'name': ['Skipper', 'Fish', 'Dragon'],
         'name_tag': ['Skipper_dog', 'Fish_cat', 'Dragon_cat'],
-        'n': [1000, 500, 400],
+        'n': [10000000, 500, 400],
         'missing': [99, 9, 0],
         'nonmissing': [901, 491, 400],
-        'missing_ratio': [0.1, 0.2, 0],
+        'missing_ratio': [0.001, 0.2, 0],
         'unique': [100, 50, 40],
         'unique_ratio': [0.5, 0.4, 0.3],
         'pct_5': [.001, 1, 3],
@@ -41,3 +42,44 @@ def create_test_data():
        }
     df = pd.DataFrame(data)
     return(df)
+
+
+def number_eda_round(x):
+    magnitude = math.log10(abs(x)  + 0.0000001) # small number to prevent log10(0) error
+    digits = max(0, math.floor(3 - magnitude))
+    x = round(x, digits)
+    if x >= 100:
+        x = int(x)
+    return(x)
+
+
+def pretty_format(x, round = True, nbsp = True):
+    if round:
+        x = number_eda_round(x)
+    remove_dot = False
+    # new
+    # x = f'{x:13.3f}'.rstrip('0').rstrip('.')  # without commas
+    # x = f'{x:15,.3f}'.rstrip('0').rstrip('.') # with comma, but throughs off alignment
+    x = f'{x:15,.3f}'.rstrip('0')
+    if x[-1:]=='.':
+        remove_dot = True
+    x = x.ljust(15, ' ')
+    
+    if nbsp:
+        dot_replacement = '&nbsp;'
+    else:
+        dot_replacement = ' '
+        
+    if nbsp:
+        x =  x.replace(' ', '&numsp;')
+        if remove_dot:
+            x =  x.replace('.', '&nbsp;')
+    else:
+        if remove_dot:
+            x =  x.replace('.', ' ')
+    
+    return(x)
+
+# numbers = [-123.03033, 1.3203, 0.456781, -70000002.18, 50000000, 13.1231, 0.1, .6666, 100.222, -4000000.1231]
+# for number in numbers:
+#     print(number_eda_format(number))

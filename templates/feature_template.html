@@ -1,20 +1,20 @@
 <h1 id="{{df['name_tag']}}">{{df['name']}}</h1>
 <style type="text/css">
-.ft  {border-collapse:collapse;border-spacing:0;width: 1000px;}
-.ft td{border-color:#f8a102;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;text-align:left;vertical-align:top;
+.ft  {border-collapse:collapse;border-spacing:0;}
+.ft td{border-color:#f8a102;border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;text-align:left;vertical-align:top;
   overflow:hidden;padding:2px 2px;word-break:normal;}
 </style>
 <table class="ft">
     <tbody>
     </tbody>
     <tr>
-        <td rowspan="5">{% include 'observation_summary.html' %}</td>
+        <td rowspan="5" style="width:250px">{% include 'observation_summary.html' %}</td>
         <td><br><br><!-- empty space --></td>
         <td rowspan="6" style="width: 200px">{% include 'proportions.html' %}</td>
-        <td rowspan="6" style="width: 200px">{% include 'values.html' %}</td>
+        <td rowspan="6" style="width: 250px">{% include 'values.html' %}</td>
     </tr>
     <tr>
-        <td rowspan="2">{%  include 'numerical_summary.html' %}</td>
+        <td rowspan="2" style="width:575px">{%  include 'numerical_summary.html' %}</td>
     </tr>
     <tr>
     </tr>
